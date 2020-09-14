@@ -90,7 +90,7 @@
 		}
 	}
 	//Zoo-keeper abtract class
-	abstract class GraphicObject {
+	abstract class zooKeeper {
    abstract void feed();
 }
 	
