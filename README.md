@@ -5,3 +5,10 @@ Java 1.8
 Download zip and extraxt to folder   
 Run command "javac *.java"   
 Then to run use command "java zoo"   
+
+# Team Members   
+Travis Cochran, Tosh
+
+#Assumptions  
+
+#Troubles   
