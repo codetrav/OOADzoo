@@ -1,6 +1,7 @@
 import java.util.Scanner;  // Import the Scanner class
 	
 	
+	//main class
 	public class zoo{
 		public static void main(String[] args) {
 		//Ask how many days
@@ -11,6 +12,7 @@ import java.util.Scanner;  // Import the Scanner class
 		int days = Integer.parseInt(daysString);
 
 		//array to store different animals in the zoo
+		//Demonstaes POLYMORPHISM as the array type of Animal yet contains the different breeds
 		Animal zooAnimals[]= new Animal[20];
 		//Populate array with animal objects
         zooAnimals[0] = new Tiger("Tony");
@@ -33,13 +35,13 @@ import java.util.Scanner;  // Import the Scanner class
 		zooAnimals[17] = new Rhino("Rosalina");
 		zooAnimals[18] = new Elephant("Ellie");
 		zooAnimals[19] = new Elephant("Elizabeth");
-
+		
 		//declare zooKeeper Object
 		zooKeeper dan = new zooKeeper();
 		//loop for each day
 		for(int i=0; i<days; i++) {
-			//TODO: Add message saying zooKeeper arrived for the day also display day # so far
-			
+			//Zookeeper arrives
+			System.out.println("The zookeeper " + dan.getName() + " has arrived for day: " + (i + 1));
 			//loop to wake all animals
 			for(int j=0; j<zooAnimals.length; j++) {
 				dan.wake(zooAnimals[j]);
@@ -60,7 +62,8 @@ import java.util.Scanner;  // Import the Scanner class
 			for(int j=0; j<zooAnimals.length; j++) {
 				dan.putToSleep(zooAnimals[j]);
 			}
-			//TODO: Add message saying zooKeeper left for day
+			//Zookeeper arrives(accessor for ECAPSULATED class )
+			System.out.println("The zookeeper " + dan.getName() + " has left for day: " + (i + 1));
 		}
     }
 	}
