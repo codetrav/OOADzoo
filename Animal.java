@@ -2,6 +2,7 @@
 	public class Animal {
 		//defualt animal traits
 		Boolean awake = false;
+		//Name is the IDENTITY for each animal, so we can differntiate sub-type
 		String name = "Bob";
 		String type = "Animal";
 		public Animal(){
