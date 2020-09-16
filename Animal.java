@@ -1,5 +1,7 @@
+import java.util.Random; //for probability
 //base class
 	public class Animal {
+		Random rand = new Random(); //random class instance
 		//defualt animal traits
 		Boolean awake = false;
 		//Name is the IDENTITY for each animal, so we can differntiate sub-type
@@ -18,7 +20,7 @@
 		   System.out.println(this.name + " the " + this.type + " has awaken!!");
 		}
 		void makeNoise(){
-		   System.out.println(this.name + " the " + this.type + "says Haerggg!");
+		   System.out.println(this.name + " the " + this.type + " says Haerggg!");
 		}
 		void excersize(){
 			System.out.println(this.name + " the " + this.type + " has worked out!");
@@ -29,25 +31,46 @@
 	}
 	//subclasses of Animal
 	class Feline extends Animal {
-		//TODO: Override some functions from animal
-		void roam(){
+		//override defualt sleep method
+		void sleep(){
+			//random between 0-99
+			int int_random = rand.nextInt(99); 
+			//30 percent chance
+			if(int_random < 30){
+				System.out.println(this.name + " the " + this.type + " roamed instead of sleeping.");
+			}
+			//another 30 percent chance
+			else if(int_random >= 30 && int_random <60){
+				System.out.println(this.name + " the " + this.type + " made a squak instead of sleeping.");
+			}
+			//40 percent chance
+			else{
+				System.out.println(this.name + " the " + this.type + " selpt per usual.");
+			}
 		}
         }
-		//TODO: Write in special cases mentioned near bottom of page 1 of assignment
 	class Pachyderm extends Animal {
-		void roam(){
+		void excersize(){
+			//random between 0-99
+			int int_random = rand.nextInt(99); 
+			//25 percent chance
+			if(int_random < 25){
+				System.out.println(this.name + " the " + this.type + " CHARGHED instead of sleeping!!");
+			}
+			else{
+				System.out.println(this.name + " the " + this.type + " has excersized per usual.");
+			}
 		}
         }
-		//TODO: Write in special cases mentioned near bottom of page 1 of assignment
 	class Canine extends Animal {
-		//TODO: Override some functions from animal
 		void roam(){
+			System.out.println(this.name + " the " + this.type + " has roamed");
 		}
         }
 	//Custom sub-class per instructions
 	class Reptile extends Animal {
-		
 		void roam(){
+			System.out.println(this.name + " the " + this.type + " has roamed");
 		}
         }
 	//custom sub-classes of reptile
@@ -73,11 +96,11 @@
 			type = "Tiger";
 		}
 		void makeNoise(){
-			 System.out.println(this.name + " the " + this.type + "says ROARRR!");
+			 System.out.println(this.name + " the " + this.type + " says ROARRR!");
 		}
 		//override base-class eat method
 		void eat(){
-			System.out.println(this.name + " the " + this.type + "devoured its dinner!");
+			System.out.println(this.name + " the " + this.type + " devoured its dinner!");
 		}
 	}
 	class Cat extends Feline {
@@ -87,7 +110,7 @@
 			type = "Cat";
 		}
 		void makeNoise(){
-			 System.out.println(this.name + " the " + this.type + "says meow!");
+			 System.out.println(this.name + " the " + this.type + " says meow!");
 		}
 		//override base-class eat method
 		void eat(){
@@ -101,7 +124,7 @@
 			type = "Lion";
 		}
 		void makeNoise(){
-			System.out.println(this.name + " the " + this.type + "says ROARRRRRRRRRRR!");
+			System.out.println(this.name + " the " + this.type + " says ROARRRRRRRRRRR!");
 		}
 	}
 	//subclasses of CANINE
@@ -112,9 +135,20 @@
 			type = "Dog";
 		}
 		void makeNoise(){
-			System.out.println(this.name + " the " + this.type + "says Bark!");
+			System.out.println(this.name + " the " + this.type + " says Bark!");
 		}
-		//TODO: Write in special cases mentioned near bottom of page 1 of assignment
+		//override base excersize method
+		void excersize(){
+			//get random from 0-99
+			int int_random = rand.nextInt(99); 
+			//25 percent chance
+		    if(int_random < 25){
+				System.out.println(this.name + " the " + this.type + " dug up dirt instead of exercising");
+			}
+			else{
+				System.out.println(this.name + " the " + this.type + " excersized by roaming per usual");
+			}
+		}
 	}
 	class Wolf extends Canine {
 		public Wolf(String newname){
@@ -123,11 +157,11 @@
 			type = "Wolf";
 		}
 		void makeNoise(){
-			System.out.println(this.name + " the " + this.type + "says HOWLLLL!");
+			System.out.println(this.name + " the " + this.type + " says HOWLLLL!");
 		}
 		//override base-class eat method
 		void eat(){
-			System.out.println(this.name + " the " + this.type + "tore its dinner to shreds!");
+			System.out.println(this.name + " the " + this.type + " tore its dinner to shreds!");
 		}
 	}
 	//subclasses of Pachyderm
@@ -139,7 +173,7 @@
 		}
 		
 		void makeNoise(){
-			System.out.println(this.name + " the " + this.type + "says kaflump!");
+			System.out.println(this.name + " the " + this.type + " says kaflump!");
 		}
 	}
 	class Rhino extends Pachyderm {
@@ -149,11 +183,11 @@
 			type = "Rhino";
 		}
 		void makeNoise(){
-			System.out.println(this.name + " the " + this.type + "Merrr!");
+			System.out.println(this.name + " the " + this.type + " says Merrr!");
 		}
 		//override base-class eat method
 		void eat(){
-			System.out.println(this.name + " the " + this.type + "ate some Mcdonalds some the in the exibit!");
+			System.out.println(this.name + " the " + this.type + " ate some Mcdonalds some the in the exibit!");
 		}
 	}
 	class Elephant extends Pachyderm {
@@ -163,6 +197,6 @@
 			type = "Elephant";
 		}
 		void makeNoise(){
-			System.out.println(this.name + " the " + this.type + "Ooooooooo!");
+			System.out.println(this.name + " the " + this.type + "says Ooooooooo!");
 		}
 	}
