@@ -42,34 +42,46 @@ import java.util.Scanner;  // Import the Scanner class
         }
 	//Custom sub-class per instructions
 	class Reptile extends Animal {
+		
 		void roam(){
 		}
         }
 	//custom sub-classes of reptile
 	class Lizard extends Reptile {
+		public Lizard(String newname){
+			awake = true;
+			name = newname;
+		}
 	}
 	class Snake extends Reptile {
+		public Snake(String newname){
+			awake = true;
+			name = newname;
+		}
 	}
 	//subclasses of Feline
     class Tiger extends Feline {
-		public Tiger(){
+		public Tiger(String newname){
 			awake = true;
+			name = newname;
 		}
 		void makeNoise(){
 			 System.out.println(this.name + "says ROARRR!");
 		}
 	}
 	class Cat extends Feline {
-		public Cat(){
+		public Cat(String newname){
 			awake = true;
+			name = newname;
 		}
 		void makeNoise(){
 			 System.out.println(this.name + "says meow!");
 		}
 	}
 	class Lion extends Feline {
-		public Lion(){
+		public Lion(String newname){
 			awake = true;
+			name = newname;
 		}
 		void makeNoise(){
 			System.out.println(this.name + "says ROARRRRRRRRRRR!");
@@ -77,16 +89,18 @@ import java.util.Scanner;  // Import the Scanner class
 	}
 	//subclasses of CANINE
     class Dog extends Canine {
-		public Dog(){
+		public Dog(String newname){
 			awake = true;
+			name = newname;
 		}
 		void makeNoise(){
 			System.out.println(this.name + "says Bark!");
 		}
 	}
 	class Wolf extends Canine {
-		public Wolf(){
+		public Wolf(String newname){
 			awake = true;
+			name = newname;
 		}
 		void makeNoise(){
 			System.out.println(this.name + "says HOWLLLL!");
@@ -94,24 +108,27 @@ import java.util.Scanner;  // Import the Scanner class
 	}
 	//subclasses of Pachyderm
     class Hippo extends Pachyderm {
-		public Hippo(){
+		public Hippo(String newname){
 			awake = true;
+			name = newname;
 		}
 		void makeNoise(){
 			System.out.println(this.name + "says kaflump!");
 		}
 	}
 	class Rhino extends Pachyderm {
-		public Rhino(){
+		public Rhino(String newname){
 			awake = true;
+			name = newname;
 		}
 		void makeNoise(){
 			System.out.println(this.name + "Merrr!");
 		}
 	}
 	class Elephant extends Pachyderm {
-		public Elephant(){
+		public Elephant(String newname){
 			awake = true;
+			name = newname;
 		}
 		void makeNoise(){
 			System.out.println(this.name + "Ooooooooo!");
@@ -133,7 +150,7 @@ import java.util.Scanner;  // Import the Scanner class
 			tmpAnimal.wake();
 		}
 		void rollCall(Animal tmpAnimal){
-			System.out.println("Zoo Keeper " + this.name+ " attempted to count " + tmpAnimal.name + "as present");
+			System.out.println("Zoo Keeper " + this.name+ " attempted to count " + tmpAnimal.name + " as present");
 			tmpAnimal.makeNoise();
 		}
 		void feed(Animal tmpAnimal){
@@ -145,7 +162,7 @@ import java.util.Scanner;  // Import the Scanner class
 			tmpAnimal.excersize();
 		}
 		void putToSleep(Animal tmpAnimal){
-			System.out.println("Zoo Keeper " + this.name+ " attempted to put " + tmpAnimal.name + "to sleep for the night.");
+			System.out.println("Zoo Keeper " + this.name+ " attempted to put " + tmpAnimal.name + " to sleep for the night.");
 			tmpAnimal.sleep();
 		}
 	}
@@ -159,9 +176,29 @@ import java.util.Scanner;  // Import the Scanner class
 		int days = Integer.parseInt(daysString);
 
 		//array to store different animals in the zoo
-		Animal zooAnimals[]= new Animal[1];
-        zooAnimals[0] = new Tiger();
-		zooAnimals[0].sleep();
+		Animal zooAnimals[]= new Animal[20];
+		//Populate array with animal objects
+        zooAnimals[0] = new Tiger("Tony");
+		zooAnimals[1] = new Tiger("Timmy");
+		zooAnimals[2] = new Lizard("Larry");
+		zooAnimals[3] = new Lizard("Lorenne");
+		zooAnimals[4] = new Snake("Sam");
+		zooAnimals[5] = new Snake("Sarah");
+		zooAnimals[6] = new Cat("Carrie");
+		zooAnimals[7] = new Cat("Chris");
+		zooAnimals[8] = new Lion("Lemons");
+		zooAnimals[9] = new Lion("Laurel");
+		zooAnimals[10] = new Dog("Daniel");
+		zooAnimals[11] = new Dog("Darren");
+		zooAnimals[12] = new Wolf("Warren");
+		zooAnimals[13] = new Wolf("Will");
+		zooAnimals[14] = new Hippo("Harry");
+		zooAnimals[15] = new Hippo("Hamlet");
+		zooAnimals[16] = new Rhino("Ryan");
+		zooAnimals[17] = new Rhino("Rosalina");
+		zooAnimals[18] = new Elephant("Ellie");
+		zooAnimals[19] = new Elephant("Elizabeth");
+
 		//declare zooKeeper Object
 		zooKeeper dan = new zooKeeper();
 		//loop for each day
@@ -189,3 +226,4 @@ import java.util.Scanner;  // Import the Scanner class
 		}
     }
 	}
+
