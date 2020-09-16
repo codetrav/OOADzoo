@@ -38,6 +38,8 @@ import java.util.Scanner;  // Import the Scanner class
 		zooKeeper dan = new zooKeeper();
 		//loop for each day
 		for(int i=0; i<days; i++) {
+			//TODO: Add message saying zooKeeper arrived for the day also display day # so far
+			
 			//loop to wake all animals
 			for(int j=0; j<zooAnimals.length; j++) {
 				dan.wake(zooAnimals[j]);
@@ -58,6 +60,7 @@ import java.util.Scanner;  // Import the Scanner class
 			for(int j=0; j<zooAnimals.length; j++) {
 				dan.putToSleep(zooAnimals[j]);
 			}
+			//TODO: Add message saying zooKeeper left for day
 		}
     }
 	}
