@@ -10,5 +10,7 @@ Then to run use command "java zoo"
 Travis Cochran, Tosh
 
 #Assumptions  
+Animals dont refuse to do activites asked outside of probability section of assignment.  
 
-#Troubles   
+#Troubles     
+None thus far..
